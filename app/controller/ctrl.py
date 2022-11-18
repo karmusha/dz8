@@ -2,7 +2,7 @@ from app.view import tk_view
 from app.view import c_view
 from . import db_sqlite3
 from . import db_csv
-from . import db_mysql
+#from . import db_mysql
 
 g_mod = None
 d_mod = None
@@ -22,8 +22,8 @@ def init_db():
             db_sqlite3.init()
         case 2:
             db_csv.init()
-        case 3:
-            db_mysql.init()
+#       case 3:
+#           db_mysql.init()
 
 def get_data_from_database(str_pattern) -> list:
     global d_mod
@@ -32,8 +32,8 @@ def get_data_from_database(str_pattern) -> list:
             return db_sqlite3.get_data(str_pattern)
         case 2:
             return db_csv.get_data(str_pattern)
-        case 3:
-            return db_mysql.get_data(str_pattern)
+#        case 3:
+#            return db_mysql.get_data(str_pattern)
 
 def load_from_csv(file_name):
     
